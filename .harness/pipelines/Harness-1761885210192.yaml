@@ -1,0 +1,33 @@
+pipeline:
+  name: Build Harness
+  identifier: Build_Luther_Stark_Harness_1761885391354
+  projectIdentifier: PythonCIPipeline
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Welcome Message
+                  identifier: Echo_Welcome_Message
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome to Harness CI"
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1761884793119
+        repoName: Luther-Stark/Harness
+        build: <+input>

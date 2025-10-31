@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Luther_Stark_Harness_1761885391354-push-trigger-input-set
+  identifier: Build_Luther_Stark_Harness_1761885391354pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: PythonCIPipeline
+  pipeline:
+    identifier: Build_Luther_Stark_Harness_1761885391354
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
